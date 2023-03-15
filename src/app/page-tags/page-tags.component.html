@@ -1,0 +1,28 @@
+<mat-grid-list cols="2" rowHeight="30">
+  <ng-container *ngFor="let tag of tags">
+    <mat-grid-tile>
+        <div>
+            <mat-icon class="inline-icon" *ngIf="tag == 'free coffee'">coffee</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'food'">local_dining</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'washing'">local_laundry_service</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'charging'">flash_on</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'toilet'">wc</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'wifi'">wifi</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'accessible'">accessible</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'homlessness support'">hotel</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'housing'">home</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'healthcare'">healing</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'employement support'">domain</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'education'">school</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'volunteering'">group</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'substance misuse'">local_bar</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'ex-military'">gps_fixed</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == '24/7'">access_time</mat-icon>
+            <mat-icon class="inline-icon" *ngIf="tag == 'youth'">perm_identity</mat-icon>
+
+            <span class="tag">{{tag}}</span>
+        </div>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>
+  

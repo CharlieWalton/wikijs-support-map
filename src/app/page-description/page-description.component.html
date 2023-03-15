@@ -1,0 +1,9 @@
+<div *ngIf="page">
+    <h2>{{page.title}}</h2>
+    <p><span>{{page.description}}</span></p>
+    <div *ngIf="page.telephone" style="margin-bottom: 6px;"><mat-icon class="inline-icon" aria-hidden="false" aria-label="Telephone" fontIcon="phone">Phone</mat-icon><span>{{page.telephone}}</span></div>
+    <app-page-tags [tags]="page.tags"></app-page-tags>
+    <br>
+    <a href="http://77.68.100.193:3000/{{page.path}}" target="_blank"><button mat-flat-button color="primary">Find out more</button></a>
+    <a href="https://www.google.com/maps/search/?api=1&query={{page.lat}}%2C{{page.lon}}" target="_blank"><button mat-flat-button>Open in Google Maps <mat-icon>map</mat-icon></button></a>
+</div>

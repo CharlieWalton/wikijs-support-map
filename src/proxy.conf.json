@@ -1,0 +1,6 @@
+{
+    "/graphql": {
+      "target": "http://77.68.100.193:3000/graphql",
+      "secure": false
+    }
+  }

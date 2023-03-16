@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import L, { Map, latLng, tileLayer, Icon } from 'leaflet'
-import { Apollo, gql } from 'apollo-angular';
-import { Observable } from 'rxjs';
 import { PageService } from './page.service';
 import { Page } from './page';
 import { NgElement, WithProperties } from '@angular/elements';
 import { PageDescriptionComponent } from './page-description/page-description.component';
+import { IconMap } from './icon.map';
 
 @Component({
   selector: 'app-root',
@@ -24,14 +23,6 @@ export class AppComponent implements OnInit {
     ],
     zoom: 14,
     center: latLng(52.628591010807305, 1.2963359850047036)
-  };
-  icon = {
-    icon: L.icon({
-      ...Icon.Default.prototype.options,
-      iconUrl: 'assets/marker-icon.png',
-      iconRetinaUrl: 'assets/marker-icon-2x.png',
-      shadowUrl: 'assets/marker-shadow.png'
-    })
   };
   map: Map;
 
@@ -56,8 +47,17 @@ export class AppComponent implements OnInit {
   addMarkers(data: Page[]) {
     data.forEach((value: Page) => {
       if (value.lat == null || value.lon == null) { return; }
-      const marker = L.marker([value.lat, value.lon], this.icon).addTo(this.map);
-      //marker.bindPopup("<b>" + value.title + "</b></br>" + value.description + "</br><button class='mat-button' mat-raised-button>Find out more</button>");
+      let icon = L.divIcon({
+        html: `
+          <div class="map-pin-container">
+            <div class="map-pin"></div>
+            <i class="material-icons">` + IconMap.get(value.path.replaceAll("-", " ").split("/")[0]) + `</i>
+          </div>`,
+        className: "",
+        iconSize: [30, 40],
+        iconAnchor: [15, 42],
+      });
+      const marker = L.marker([value.lat, value.lon], { icon: icon}).addTo(this.map);
       marker.bindPopup( fl => {
         const popupEl: NgElement & WithProperties<PageDescriptionComponent> = document.createElement('popup-element') as any;
         // Listen to the close event

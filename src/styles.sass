@@ -19,3 +19,32 @@ html, body, .leaflet-container
     width: 18px !important
     height: 18px !important
     margin-right: 0.2em
+
+.map-pin-container
+    position: relative
+
+    i
+        position: absolute
+        top: 4px
+        left: 5px
+        color: #fff
+        font-size: 19px
+        z-index: 1
+
+    .map-pin
+        position: absolute
+        border-radius: 50%
+        background: #2596be
+        border: 10px solid #2596be
+        width: 9px
+        height: 9px
+
+        &:after
+            position: absolute
+            content: ''
+            width: 0px
+            height: 0px
+            bottom: -36px
+            left: -8px
+            border: 14px solid transparent
+            border-top: 22px solid #2596be

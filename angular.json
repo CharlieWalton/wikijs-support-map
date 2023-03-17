@@ -80,6 +80,10 @@
             "production": {
               "browserTarget": "support-map:build:production"
             },
+            "staging": {
+              "browserTarget": "support-map:build:production",
+              "proxyConfig": "src/proxy.conf.json"
+            },
             "development": {
               "browserTarget": "support-map:build:development",
               "proxyConfig": "src/proxy.conf.json"

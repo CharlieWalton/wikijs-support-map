@@ -2,3 +2,6 @@
      [leafletOptions]="options"
      (leafletMapReady)="onMapReady($event)">
 </div>
+<div class='page-description-wrapper' [class.visible] = "!!page">
+     <app-page-description class="page-description" [page]="page"></app-page-description>
+</div>

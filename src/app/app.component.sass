@@ -1,20 +1,19 @@
-.map-pin-container
-    position: relative
-    .map-pin
-        position: absolute
-        margin-left: 115px
+.page-description-wrapper
+    position: fixed
+    padding: 0 1%
+    transition: bottom 500ms ease
+    bottom: -1000px
+    z-index: 999
+    left: 0
+    right: 0
 
-        border-radius: 50%
-        border: 8px solid #fff
-        width: 8px
-        height: 8px
+    &.visible
+            bottom: 0px
 
-        ::after
-            position: absolute
-            content: ''
-            width: 0px
-            height: 0px
-            bottom: -30px
-            left: -6px
-            border: 10px solid transparent
-            border-top: 17px solid #fff
+    .page-description
+        display: block
+        max-width: 500px
+        background: #fff
+        padding: 20px
+        margin: 0 auto
+        border-radius: 10px 10px 0 0

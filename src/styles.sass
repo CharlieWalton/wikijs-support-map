@@ -13,12 +13,20 @@ html, body, .leaflet-container
 .mat-grid-tile-content
     justify-content: left !important
 
+.centre
+    max-width: 800px
+    margin-left: auto
+    margin-right: auto
+
 .inline-icon
     vertical-align: bottom
     font-size: 18px !important
     width: 18px !important
     height: 18px !important
     margin-right: 0.2em
+
+.leaflet-popup
+    display: none
 
 .map-pin-container
     position: relative
@@ -48,3 +56,17 @@ html, body, .leaflet-container
             left: -8px
             border: 14px solid transparent
             border-top: 22px solid #2596be
+    
+.selected
+    &.leaflet-marker-icon
+        z-index: 800 !important
+
+    .map-pin-container
+        i
+            color: #2596be
+        .map-pin
+            background: #fff
+            border-color: #fff
+
+            &:after
+                border-top-color: #fff
